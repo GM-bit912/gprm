@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GPRM Verification Annex v0.3 · v1.8.1 Fixture Completion</title>
+  <style>
+    :root{--navy:#111b2d;--navy2:#1a2942;--gold:#c5a45c;--paper:#f4efe5;--ink:#182237;--muted:#657084;--line:#d4c8b2;--green:#35634d;--red:#9b3e3c}
+    *{box-sizing:border-box}body{margin:0;background:#e8e1d4;color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+    main{max-width:900px;margin:32px auto;background:var(--paper);box-shadow:0 20px 55px #1118;padding:54px 60px}
+    .mast{border-top:8px solid var(--navy);border-bottom:1px solid var(--line);padding:16px 0 22px}
+    .eyebrow,.meta,th,.tag{font:700 11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
+    .eyebrow{color:#8b6c2f}.meta{color:var(--muted);letter-spacing:.04em;text-transform:none}
+    h1{font-size:34px;line-height:1.08;margin:8px 0 10px}h2{font-size:21px;margin:34px 0 10px;border-bottom:2px solid var(--navy);padding-bottom:5px}h3{font-size:16px;margin:22px 0 7px}
+    p,li{font-size:15px}table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:13px}
+    th{text-align:left;background:var(--navy);color:white;padding:9px 10px;letter-spacing:.08em}td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+    td.num{font-family:ui-monospace,Menlo,Consolas,monospace;text-align:right;white-space:nowrap}.pass{color:var(--green);font-weight:bold}
+    .correction{background:#fff8e7;border-left:5px solid var(--gold);padding:14px 16px;margin:20px 0}
+    .equation{background:var(--navy);color:#f6f0e3;padding:16px 18px;border-radius:5px;font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;overflow:auto}
+    .limit{background:#eee7da;border:1px solid var(--line);padding:13px 15px;margin-top:20px}
+    footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    @media(max-width:720px){main{margin:0;padding:30px 20px;box-shadow:none}h1{font-size:28px}table{display:block;overflow-x:auto}}
+    @media print{body{background:white}main{box-shadow:none;margin:0;max-width:none;padding:20mm}a{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="mast">
+    <div class="eyebrow">Fortis Minerva Ltd · The Nostradamus Method · GPRM</div>
+    <h1>Verification Annex v0.3</h1>
+    <div class="meta">Fixture completion for GPRM v1.8.1 Founder Edition · canonical v1.8 scoring core · issued 29 July 2026</div>
+  </header>
+
+  <div class="correction">
+    <strong>Correction record.</strong> Annex v0.2 stated that the approved input vector for the exact
+    η&nbsp;1.7875 hand fixture was unavailable. The original Fortis Minerva user guide, §6, supplied in
+    the project share pack contains that vector. This annex publishes the recovered test definition,
+    closes the earlier verification caveat, and leaves the underlying v0.2 historical finding unchanged.
+  </div>
+
+  <h2>Release conclusion</h2>
+  <p>
+    The v1.8.1 integrity build reproduces all three permanent fixtures. v1.8.1 is a controlled workflow
+    and integrity release: it retains the canonical v1.8 scoring arithmetic and fixed η headline bands.
+    It does not claim a new fitted calibration.
+  </p>
+
+  <table>
+    <thead><tr><th>Permanent fixture</th><th>Raw engine η</th><th>Release display</th><th>Headline</th><th>Gate</th></tr></thead>
+    <tbody>
+      <tr><td>Workbench defaults</td><td class="num">2.185</td><td class="num">2.18</td><td>CRITICAL</td><td class="pass">PASS</td></tr>
+      <tr><td>Approved hand fixture</td><td class="num">1.7875</td><td class="num">1.7875 exact</td><td>WARNING</td><td class="pass">PASS</td></tr>
+      <tr><td>USA projection</td><td class="num">3.463</td><td class="num">3.46</td><td>CRITICAL</td><td class="pass">PASS</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Recovered hand-fixture definition</h2>
+  <table>
+    <thead><tr><th>Field</th><th>Approved value</th><th>Test condition</th></tr></thead>
+    <tbody>
+      <tr><td>Prior η</td><td class="num">0.80</td><td>Base persistence applies</td></tr>
+      <tr><td>K</td><td class="num">0.80</td><td>γK = 0.70</td></tr>
+      <tr><td>C</td><td class="num">0.60</td><td>γC = 0.50</td></tr>
+      <tr><td>D</td><td class="num">0.75</td><td>γD = 0.65</td></tr>
+      <tr><td>I / F</td><td class="num">0.00 / 0.00</td><td>No contribution</td></tr>
+      <tr><td>Tz</td><td class="num">0.40</td><td>Recorded but E1 is off</td></tr>
+      <tr><td>E1 / E2 / E3</td><td class="num">OFF / OFF / OFF</td><td>φbase = 0.55; no interaction; no regime multiplier</td></tr>
+    </tbody>
+  </table>
+
+  <div class="equation">
+η = (0.55 × 0.80) + (0.70 × 0.80) + (0.50 × 0.60) + (0.65 × 0.75)<br>
+&nbsp; = 0.4400 + 0.5600 + 0.3000 + 0.4875<br>
+&nbsp; = 1.7875 exactly
+  </div>
+
+  <h2>v1.8 headline-band contract</h2>
+  <table>
+    <thead><tr><th>Headline</th><th>η range</th><th>Boundary rule</th></tr></thead>
+    <tbody>
+      <tr><td>CLEAR</td><td class="num">η &lt; 1.30</td><td>Upper endpoint excluded</td></tr>
+      <tr><td>WATCH</td><td class="num">1.30 ≤ η &lt; 1.75</td><td>1.30 included; 1.75 excluded</td></tr>
+      <tr><td>WARNING</td><td class="num">1.75 ≤ η &lt; 2.15</td><td>1.75 included; 2.15 excluded</td></tr>
+      <tr><td>CRITICAL</td><td class="num">η ≥ 2.15</td><td>2.15 included</td></tr>
+    </tbody>
+  </table>
+  <p>
+    These fixed η bands control the headline. The model’s L0–L4 probability distribution remains part
+    of the output; any configurable probability profile is secondary notification policy and cannot
+    override the headline.
+  </p>
+
+  <h2>What remains unchanged from Annex v0.2</h2>
+  <p>
+    The six-case retrospective replay exposed over-warning in the earlier probability-trigger headline:
+    all six cases were labelled CRITICAL. The η scores themselves separated the genuine high outcomes
+    from the calm controls more usefully, and v1.8 introduced the traceable fixed bands above. The calm
+    controls then moved to WARNING/WATCH while the high cases remained CRITICAL.
+  </p>
+  <div class="limit">
+    <strong>Honest limit.</strong> Six hindsight-coded episodes—including two calm controls—support an
+    interim correction, not a validated calibration. The fitted model still requires the adjudicated
+    Phase 2 corpus, a second coder and inter-rater study, equation-aligned validation, and prospective
+    forecasts frozen before outcomes.
+  </div>
+
+  <h2>v1.8.1 release controls</h2>
+  <ul>
+    <li>All three fixtures replay automatically at startup; scoring and projection are barred if the release gate fails.</li>
+    <li>The workbench rejects out-of-range inputs and invalid imports rather than silently changing them.</li>
+    <li>Changing any score input invalidates the prior result until the analyst recomputes it.</li>
+    <li>Exports require period, analyst, narrative and evidence; projection exports additionally require an evidence cut-off and review confirmation.</li>
+    <li>Local log hashes detect continuity changes but are not equivalent to a signed server audit trail.</li>
+    <li>Phase 2 parameter application remains disabled until the research recurrence matches production scoring.</li>
+  </ul>
+
+  <h2>Use boundary</h2>
+  <p>
+    GPRM assesses pressure on systems, not people. It provides transparent probabilistic decision support,
+    not targeting, operational orders or a prediction guarantee. Human review is required before reliance.
+    It is not investment, legal or operational advice.
+  </p>
+
+  <footer>
+    Fortis Minerva Ltd · Founder and method originator: Gordon Mair · GPRM v1.8.1 Founder Edition ·
+    Annex v0.3 supersedes only the missing-fixture caveat in v0.2; it does not erase the earlier record.
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+# Local and secret material
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+*.mobileprovision
+*.secrets.*
+secrets/
+credentials/
+
+# Proprietary source and internal packages
+*_SOURCE.html
+*_source.html
+source/
+private/
+internal/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.map
+
+# Runtime and editor output
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+coverage/
+dist/
+build/
+tmp/
+temp/
